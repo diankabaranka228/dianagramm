@@ -54,30 +54,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-// script.js
 document.addEventListener('DOMContentLoaded', (event) => {
     const commentInput = document.getElementById('commentInput');
     const commentsContainer = document.getElementById('commentsContainer');
 
     const submitComment = () => {
-        // Получаем текст комментария
         const commentText = commentInput.value.trim();
 
-            // Создаем новый элемент для комментария
             const commentElement = document.createElement('div');
             commentElement.className = 'comment';
             commentElement.innerText = commentText;
 
-            // Добавляем новый комментарий в контейнер
             commentsContainer.appendChild(commentElement);
 
-            // Очищаем поле ввода
             commentInput.value = '';
     };
 
     commentInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault(); // Предотвращаем добавление новой строки в textarea
+            event.preventDefault();
             submitComment();
         }
     });
